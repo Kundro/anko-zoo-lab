@@ -19,7 +19,7 @@ jobs:
           6.0.x
         
     - name: Restore dependencies
-      run: dotnet ZooLab/ZooLab.sln restore
+      run: dotnet restore ZooLab/ZooLab.sln
       
     - name: Build
       run: dotnet build ZooLab/ZooLab.sln --no-restore
