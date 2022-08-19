@@ -11,5 +11,12 @@ namespace ZooLab.Tests
             ZooApp zooApp = new ZooApp();
             Assert.NotNull(zooApp);
         }
+
+        public void ShouldBeAbleToAddZoo()
+        {
+            Zoo zoo1 = new Zoo(); 
+            ZooApp zooApp = new ZooApp();
+            zooApp.AddZoo(zoo1);
+        }
     }
 }
