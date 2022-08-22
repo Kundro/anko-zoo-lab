@@ -1,4 +1,6 @@
-﻿namespace ZooLab
+﻿using ZooLab.Animals;
+
+namespace ZooLab.Employees
 {
     public class ZooKeeper : IEmployee
     {

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using ZooLab.FoodTypes.Food;
+using ZooLab.MedicineTypes;
 
-namespace ZooLab
+namespace ZooLab.Animals
 {
     public abstract class Animal
     {
@@ -25,7 +27,7 @@ namespace ZooLab
         {
 
         }
-        public void Heal(Medicine)
+        public void Heal(Medicine med)
         {
 
         }

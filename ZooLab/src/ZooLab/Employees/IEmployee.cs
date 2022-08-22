@@ -1,4 +1,4 @@
-﻿namespace ZooLab
+﻿namespace ZooLab.Employees
 {
     public interface IEmployee
     {
