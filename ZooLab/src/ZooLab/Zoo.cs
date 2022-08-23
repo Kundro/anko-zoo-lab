@@ -61,9 +61,26 @@ namespace ZooLab
             }
             throw new NoAvailableEnclosureException();
         }
+        // Create my own method to get all types of animals in zoo
+        public List<string> AllAnimalTypes()
+        {
+            List<string> allAnimalTypes = new List<string>();
+            foreach(var enclosure in this.Enclosures)
+            {
+                foreach(var animal in enclosure.Animals)
+                {
+                    string animalType = animal.GetType().Name;
+                    if (!allAnimalTypes.Contains(animalType))
+                    {
+                        allAnimalTypes.Add(animalType);
+                    }
+                }
+            }
+            return allAnimalTypes;
+        }
         public void HireEmployee(IEmployee employee)
         {
-
+            Employees.Add(employee);
         }
         public void FeedAnimals(DateTime dateTime)
         {

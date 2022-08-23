@@ -2,10 +2,16 @@
 
 namespace ZooLab.Employees
 {
-    public class Veterinarian
+    public class Veterinarian : IEmployee
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public Veterinarian(string firstName, string lastName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+        public string FirstName { get; }
+        public string LastName { get; }
         public void AddAnimalExperience(Animal animal)
         {
 
