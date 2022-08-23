@@ -9,10 +9,10 @@ namespace ZooLab.FoodTypes
         {
             return DateTime.Now;
         }
-        public ZooKeeper FeedByZooKeeper()
+        public Zookeeper FeedByZooKeeper()
         {
-            ZooKeeper zooKeeper = new ZooKeeper();
-            return zooKeeper;
+            Zookeeper zookeeper = new Zookeeper("Alexey", "Kundro");
+            return zookeeper;
         }
     }
 }

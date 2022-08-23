@@ -8,7 +8,7 @@ namespace ZooLab.Validators
         public override List<ValidationError> ValidateEmployee(IEmployee employee, Zoo zoo)
         {
             List<ValidationError> errors = new List<ValidationError>();
-            if(!(employee is Veterinarian))
+            if (!(employee is Veterinarian))
             {
                 errors.Add(new ValidationError { ErrorMessage = $"Employee {employee.FirstName} {employee.LastName} must be a veterinarian to take VeterinarianHireValidator" });
                 return errors;
@@ -17,7 +17,7 @@ namespace ZooLab.Validators
             // Using my own method to get all animal types in zoo
             List<string> allAnimalTypes = zoo.AllAnimalTypes();
 
-            foreach(string animal in allAnimalTypes)
+            foreach (string animal in allAnimalTypes)
             {
                 if (!(employee as Veterinarian).AnimalExperiences.Contains(animal))
                 {

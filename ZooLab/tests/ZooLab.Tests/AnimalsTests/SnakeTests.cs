@@ -11,7 +11,7 @@ namespace ZooLab.Tests.AnimalsTests
             Snake snake = new Snake();
             Assert.NotNull(snake);
             Assert.IsType<Snake>(snake);
-            Assert.Equal(snake.RequiredSpaceSqFt, 2);
+            Assert.Equal(2, snake.RequiredSpaceSqFt);
         }
 
 

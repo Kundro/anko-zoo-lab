@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using ZooLab.FoodTypes.Food;
 
 namespace ZooLab.Animals.Reptile
 {

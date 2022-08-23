@@ -1,6 +1,6 @@
 ﻿namespace ZooLab.MedicineTypes
 {
-    class AntiInflammatory : Medicine
+    public class AntiInflammatory : Medicine
     {
 
     }

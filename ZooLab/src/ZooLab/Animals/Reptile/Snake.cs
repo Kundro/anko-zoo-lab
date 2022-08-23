@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ZooLab.FoodTypes.Food;
+﻿using System.Linq;
 
 namespace ZooLab.Animals.Reptile
 {

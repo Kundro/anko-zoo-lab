@@ -6,17 +6,28 @@ using ZooLab.Exceptions;
 
 namespace ZooLab.Tests.Employees
 {
-    public class ZooKeeperTests
+    public class ZookeeperTests
     {
         [Fact]
         public void ShouldBeAbleToCreateZookeeper()
         {
             Zookeeper zookeeper = new Zookeeper("Alexey", "Kundro");
-            zookeeper.GetType().Should().Be(typeof(Zookeeper));
             zookeeper.Should().NotBeNull();
+            zookeeper.GetType().Should().Be(typeof(Zookeeper));
             zookeeper.FirstName.Should().Be("Alexey");
             zookeeper.LastName.Should().Be("Kundro");
         }
+
+        [Fact]
+        public void ShouldBeAbleToHaveAnimalExperience()
+        {
+            Zookeeper zookeeper = new Zookeeper("Alexey", "Kundro");
+            Lion lion1 = new Lion();
+            zookeeper.AddAnimalExperience(lion1);
+            zookeeper.HasAnimalExperience(lion1).Should().BeTrue();
+        }
+
+
         [Fact]
         public void ShouldBeAbleToAddAnimalExperience()
         {

@@ -1,6 +1,7 @@
 ﻿using Xunit;
 using ZooLab.Animals.Mammal;
 using ZooLab.Animals.Reptile;
+using ZooLab.Employees;
 using ZooLab.Exceptions;
 
 namespace ZooLab.Tests
@@ -57,6 +58,17 @@ namespace ZooLab.Tests
             Snake snake = new Snake();
             Assert.Equal(zoo.FindAvailableEnclosure(snake), test1);
             Assert.Throws<NoAvailableEnclosureException>(() => zoo.FindAvailableEnclosure(new Bison()));
+        }
+        [Fact]
+        public void ShouldBeAbleToHireEmployee()
+        {
+            Zoo zoo = new Zoo("Minsk");
+            zoo.AddEnclosure("enclosure1", 2000, zoo);
+            Lion lion1 = new Lion();
+            zoo.AddAnimal(lion1);
+            Zookeeper zookeeper = new Zookeeper("Alex", "Kun");
+            zookeeper.AddAnimalExperience(new Lion());
+            zoo.HireEmployee(zookeeper);
         }
     }
 }

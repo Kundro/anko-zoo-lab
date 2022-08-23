@@ -10,11 +10,12 @@ namespace ZooLab.Employees
         {
             FirstName = firstName;
             LastName = lastName;
+            AnimalExperiences = "";
         }
-        public string FirstName { get; }
+        public string FirstName { get; private set; }
 
-        public string LastName { get; }
-        public string AnimalExperiences { get; set; }
+        public string LastName { get; private set; }
+        public string AnimalExperiences { get; private set; }
         public void AddAnimalExperience(Animal animal)
         {
             if (!HasAnimalExperience(animal))
@@ -29,9 +30,9 @@ namespace ZooLab.Employees
         }
         public bool FeedAnimal(Animal animal)
         {
-            if (!HasAnimalExperience(animal))
+            if (!this.HasAnimalExperience(animal))
             {
-                throw new NotFriendlyAnimalException();
+                throw new NoNeededExperienceException();
             }
             Console.Write($"{animal.GetType().Name} was fed by {this.FirstName} {this.LastName}");
 

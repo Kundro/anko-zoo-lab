@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using ZooLab.Animals;
-using ZooLab.Animals.Bird;
-using ZooLab.Animals.Mammal;
-using ZooLab.Animals.Reptile;
 using ZooLab.Employees;
 using ZooLab.Exceptions;
 using ZooLab.Validators;
@@ -16,7 +13,7 @@ namespace ZooLab
         {
             Location = location;
             Enclosures = new List<Enclosure>();
-            Employees = new List<IEmployee>(); 
+            Employees = new List<IEmployee>();
         }
         public List<Enclosure> Enclosures { get; set; }
         public List<IEmployee> Employees { get; set; }
@@ -36,17 +33,17 @@ namespace ZooLab
         }
         public Enclosure FindAvailableEnclosure(Animal animal)
         {
-            foreach(Enclosure enclosure in this.Enclosures)
+            foreach (Enclosure enclosure in this.Enclosures)
             {
                 int enclosureOccupiedSpace = 0;
-                foreach(Animal enclosureAnimals in enclosure.Animals)
+                foreach (Animal enclosureAnimals in enclosure.Animals)
                 {
                     enclosureOccupiedSpace += enclosureAnimals.RequiredSpaceSqFt;
                 }
                 if (enclosureOccupiedSpace + animal.RequiredSpaceSqFt > enclosure.SquareFeet) continue;
 
                 bool isFriendly = true;
-                foreach(Animal enclosureAnimals in enclosure.Animals)
+                foreach (Animal enclosureAnimals in enclosure.Animals)
                 {
                     if (!enclosureAnimals.IsFriendlyWith(animal))
                     {
@@ -66,9 +63,9 @@ namespace ZooLab
         public List<string> AllAnimalTypes()
         {
             List<string> allAnimalTypes = new List<string>();
-            foreach(var enclosure in this.Enclosures)
+            foreach (var enclosure in this.Enclosures)
             {
-                foreach(var animal in enclosure.Animals)
+                foreach (var animal in enclosure.Animals)
                 {
                     string animalType = animal.GetType().Name;
                     if (!allAnimalTypes.Contains(animalType))
@@ -91,7 +88,25 @@ namespace ZooLab
         }
         public void FeedAnimals(DateTime dateTime)
         {
-
+            Console.WriteLine($"Feed animals at zoo in {this.Location}");
+            foreach (var enclosure in Enclosures)
+            {
+                foreach (var animal in enclosure.Animals)
+                {
+                    foreach (var employee in Employees)
+                    {
+                        if (employee is Zookeeper)
+                        {
+                            Zookeeper zookeeper = (Zookeeper)employee;
+                            if ((employee as Zookeeper).HasAnimalExperience(animal))
+                            {
+                                zookeeper.FeedAnimal(animal);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
         public void HealAnimals()
         {
