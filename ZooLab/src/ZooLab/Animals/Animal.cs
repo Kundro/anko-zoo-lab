@@ -22,7 +22,7 @@ namespace ZooLab.Animals
         public List<FeedTime> FeedTimes { get; }
         public List<int> FeedSchedule { get; }
         public abstract bool IsFriendlyWith(Animal animal);
-        public void Feed(Food food, ZooKeeper zooKeeper)
+        public void Feed(Food food, Zookeeper zooKeeper)
         {
             // nothing
         }

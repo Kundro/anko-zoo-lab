@@ -6,6 +6,7 @@ using ZooLab.Animals.Mammal;
 using ZooLab.Animals.Reptile;
 using ZooLab.Employees;
 using ZooLab.Exceptions;
+using ZooLab.Validators;
 
 namespace ZooLab
 {
@@ -80,6 +81,12 @@ namespace ZooLab
         }
         public void HireEmployee(IEmployee employee)
         {
+            HireValidatorProvider provider = new HireValidatorProvider();
+            IHireValidator validator = provider.GetHireValidator(employee);
+            validator.ValidateEmployee(employee, this);
+
+            // If there're exceptions - validation isn't right
+            Console.WriteLine($"Employee {employee.FirstName} {employee.LastName} hired to zoo ({this.Location})");
             Employees.Add(employee);
         }
         public void FeedAnimals(DateTime dateTime)

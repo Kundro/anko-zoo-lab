@@ -15,7 +15,10 @@ namespace ZooLab.Validators
                 errors.Add(new ValidationError { ErrorMessage = $"Emplooye {employee.FirstName} {employee.LastName} must be a zookeeper to take ZookeeperHireValidation" });
                 return errors;
             }
+
+            // Using my own method to get all animal types in zoo
             List<string> allAnimalTypes = zoo.AllAnimalTypes();
+            
             foreach(string animal in allAnimalTypes)
             {
                 if(!(employee as Zookeeper).AnimalExperiences.Contains(animal))

@@ -4,9 +4,9 @@ using ZooLab.Exceptions;
 
 namespace ZooLab.Employees
 {
-    public class ZooKeeper : IEmployee
+    public class Zookeeper : IEmployee
     {
-        public ZooKeeper(string firstName, string lastName)
+        public Zookeeper(string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -24,7 +24,8 @@ namespace ZooLab.Employees
         }
         public bool HasAnimalExperience(Animal animal)
         {
-            return AnimalExperiences.Contains(animal.GetType().Name);
+            if (AnimalExperiences.Contains(animal.GetType().Name)) return true;
+            else return false;
         }
         public bool FeedAnimal(Animal animal)
         {
