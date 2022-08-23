@@ -1,9 +1,23 @@
-﻿namespace ZooLab.Animals.Reptile
+﻿using System.Linq;
+using ZooLab.FoodTypes.Food;
+
+namespace ZooLab.Animals.Reptile
 {
     public class Turtle : Reptile
     {
-        public override int RequiredSpaceSqFt => throw new System.NotImplementedException();
-
-        public override string[] FavoriteFood => throw new System.NotImplementedException();
+        public override int RequiredSpaceSqFt => 5;
+        public override string[] FavoriteFood => new string[] { "Grass" };
+        public static readonly string[] Friends = new string[]
+        {
+            "Snake",
+            "Parrot",
+            "Bison",
+            "Elephant",
+            "Turtle"
+        };
+        public override bool IsFriendlyWith(Animal animal)
+        {
+            return Friends.Contains(animal.GetType().Name);
+        }
     }
 }

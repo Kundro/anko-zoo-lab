@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ZooLab.Animals;
 
 namespace ZooLab
@@ -12,11 +13,12 @@ namespace ZooLab
             ParentZoo = parentZoo;
         }
         public string Name { get; set; }
-        public List<Animal> Animals { get; set; }
+        public List<Animal> Animals { get; set; } = new List<Animal>();
         public int SquareFeet { get; set; }
         public Zoo ParentZoo { get; set; }
         public void AddAnimals(Animal animal)
         {
+            Console.WriteLine($"{animal.GetType().Name} was added to enclosure {this.Name}");
             Animals.Add(animal);
         }
     }

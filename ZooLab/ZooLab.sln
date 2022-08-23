@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooLab", "src\ZooLab\ZooLab.csproj", "{35653F0D-FA65-4B45-B7C6-A8F1CDCD6139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooLab", "src\ZooLab\ZooLab.csproj", "{35653F0D-FA65-4B45-B7C6-A8F1CDCD6139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZooLab.Tests", "tests\ZooLab.Tests\ZooLab.Tests.csproj", "{91D69C1D-9E0F-4F20-9B6C-B47EA9B7207C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZooLab.Tests", "tests\ZooLab.Tests\ZooLab.Tests.csproj", "{91D69C1D-9E0F-4F20-9B6C-B47EA9B7207C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F32EC90E-F74B-44EF-BB6D-72990BDC3163}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{16FDA9D7-972D-4477-BD4E-C4C502809377}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35653F0D-FA65-4B45-B7C6-A8F1CDCD6139} = {F32EC90E-F74B-44EF-BB6D-72990BDC3163}
+		{91D69C1D-9E0F-4F20-9B6C-B47EA9B7207C} = {16FDA9D7-972D-4477-BD4E-C4C502809377}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13F77C61-FA01-4F87-BBBF-0A8FDCAB4C32}
