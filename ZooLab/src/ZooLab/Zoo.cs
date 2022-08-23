@@ -59,7 +59,7 @@ namespace ZooLab
                     return enclosure;
                 }
             }
-            throw new NoAvailableEnclosure();
+            throw new NoAvailableEnclosureException();
         }
         public void HireEmployee(IEmployee employee)
         {

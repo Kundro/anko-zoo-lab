@@ -43,7 +43,7 @@ namespace ZooLab.Tests
 
             zoo.AddAnimal(snake);
             zoo.AddAnimal(lion1);
-            Assert.Throws<NoAvailableEnclosure>(() => zoo.AddAnimal(lion2));
+            Assert.Throws<NoAvailableEnclosureException>(() => zoo.AddAnimal(lion2));
         }
 
         [Fact]
@@ -56,7 +56,7 @@ namespace ZooLab.Tests
 
             Snake snake = new Snake();
             Assert.Equal(zoo.FindAvailableEnclosure(snake), test1);
-            Assert.Throws<NoAvailableEnclosure>(() => zoo.FindAvailableEnclosure(new Bison()));
+            Assert.Throws<NoAvailableEnclosureException>(() => zoo.FindAvailableEnclosure(new Bison()));
         }
     }
 }
