@@ -1,23 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using ZooLab.Animals;
+using ZooLab.Employees;
+using ZooLab.Exceptions;
 
 namespace ZooLab
 {
     public class Zoo
     {
-        public List<Enclosure> Enclousures { get; set; }
-        public List<IEmployee> Employees { get; set; }
-        public List<Veterinarian> Veterinarians { get; set; }
-        public Enclosure AddEnclosure(string name, int squareFeet)
+        public Zoo(string location)
         {
-            Enclosure enclosure = new Enclosure();
+            Location = location;
+            Enclosures = new List<Enclosure>();
+            Employees = new List<IEmployee>(); 
+        }
+        public List<Enclosure> Enclosures { get; private set; }
+        public List<IEmployee> Employees { get; private set; }
+        public string Location { get; private set; }
+        public Enclosure AddEnclosure(string name, int squareFeet, Zoo parentZoo)
+        {
+            var enclosure = new Enclosure(name, squareFeet, this);
+            Enclosures.Add(enclosure);
+            Console.WriteLine($"\"{name}\" enclosure was added to Zoo at {parentZoo.Location}");
             return enclosure;
         }
         public Enclosure FindAvailableEnclosure(Animal animal)
         {
-            Enclosure enclosure = new Enclosure();
-            return enclosure;
+            foreach(Enclosure enclosure in Enclosures)
+            {
+                int enclosureOccupiedSpace = 0;
+                foreach(Animal animals in enclosure.Animals)
+                {
+                    enclosureOccupiedSpace += animal.RequiredSpaceSqFt;
+                }
+                if (enclosureOccupiedSpace + animal.RequiredSpaceSqFt > enclosure.SquareFeet) continue;
+
+                bool isFriendly = true;
+                foreach(Animal animals in enclosure.Animals)
+                {
+                    if (!animals.IsFriendlyWith(animal))
+                    {
+                        isFriendly = false;
+                        break;
+                    }
+                }
+
+                if (isFriendly && (enclosureOccupiedSpace + animal.RequiredSpaceSqFt <= enclosure.SquareFeet))
+                {
+                    return enclosure;
+                }
+            }
+            throw new NoAvailableEnclosure();
         }
         public void HireEmployee(IEmployee employee)
         {
@@ -25,7 +58,8 @@ namespace ZooLab
         }
         public Enclosure AddAnimal(Animal animal)
         {
-            Enclosure enclosure = new Enclosure();
+            Enclosure enclosure = FindAvailableEnclosure(animal);
+            enclosure.AddAnimals(animal);
             return enclosure;
         }
         public void FeedAnimals(DateTime dateTime)

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "2Mv+NIkDm8Po8nJ0nGWBL+8AxZerh/g0p/jaV5jY2mJUZALXkCksnwL1RuogmjmXb8YzDe5QWLt1gAgrwugnZg==",
+  "dgSpecHash": "b8sase4y4bo4fKxvffG6sdh9SvHGHe7Hi5QU3whwcKEzx0u0luy2OeXk3zII0CzSJjrucE6kSj5+G/RuDNJANg==",
   "success": true,
   "projectFilePath": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\src\\ZooLab\\ZooLab.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fluentassertions\\6.7.0\\fluentassertions.6.7.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+  ],
   "logs": []
 }
