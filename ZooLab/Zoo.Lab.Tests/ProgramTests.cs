@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Zoo.Lab.Tests
+namespace ZooLab.App.Tests
 {
     public class ProgramTests
     {
