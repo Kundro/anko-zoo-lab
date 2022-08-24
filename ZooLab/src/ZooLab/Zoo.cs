@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ZooLab.Animals;
 using ZooLab.Employees;
 using ZooLab.Exceptions;
+using ZooLab.MedicineTypes;
 using ZooLab.Validators;
 
 namespace ZooLab
@@ -88,7 +89,6 @@ namespace ZooLab
         }
         public void FeedAnimals(DateTime dateTime)
         {
-            Console.WriteLine($"Feed animals at zoo in {this.Location}");
             foreach (var enclosure in Enclosures)
             {
                 foreach (var animal in enclosure.Animals)
@@ -100,6 +100,7 @@ namespace ZooLab
                             Zookeeper zookeeper = (Zookeeper)employee;
                             if ((employee as Zookeeper).HasAnimalExperience(animal))
                             {
+                                Console.Write($"In {enclosure.Name} at {dateTime}:");
                                 zookeeper.FeedAnimal(animal);
                                 break;
                             }
@@ -110,7 +111,26 @@ namespace ZooLab
         }
         public void HealAnimals()
         {
-
+            foreach (var enclosure in Enclosures)
+            {
+                foreach (var animal in enclosure.Animals)
+                {
+                    foreach (var employee in Employees)
+                    {
+                        if (employee is Veterinarian)
+                        {
+                            Veterinarian veterinarian = (Veterinarian)employee;
+                            if ((employee as Veterinarian).HasAnimalExperience(animal))
+                            {
+                                Console.Write($"In {enclosure.Name}:");
+                                Medicine medicine = new Antibiotics();
+                                veterinarian.HealAnimal(animal, medicine);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

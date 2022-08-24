@@ -34,7 +34,7 @@ namespace ZooLab.Employees
             {
                 throw new NoNeededExperienceException();
             }
-            Console.Write($"{animal.GetType().Name} was fed by {this.FirstName} {this.LastName}");
+            Console.Write($"... {animal.GetType().Name} was fed by {this.FirstName} {this.LastName}");
 
             return true;
         }

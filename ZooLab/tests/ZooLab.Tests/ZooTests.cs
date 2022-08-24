@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using ZooLab.Animals.Mammal;
 using ZooLab.Animals.Reptile;
 using ZooLab.Employees;
@@ -69,6 +70,23 @@ namespace ZooLab.Tests
             Zookeeper zookeeper = new Zookeeper("Alex", "Kun");
             zookeeper.AddAnimalExperience(new Lion());
             zoo.HireEmployee(zookeeper);
+        }
+
+        [Fact]
+        public void ShouldBeAbleToFeedAnimals()
+        {
+            Zoo zoo = new Zoo("zoo1");
+            zoo.AddEnclosure("Snakes", 200, zoo);
+            Snake snake = new Snake();
+            zoo.FindAvailableEnclosure(snake);
+            zoo.AddAnimal(snake);
+            Zookeeper zookeeper1 = new Zookeeper("name1", "surname1");
+            Zookeeper zookeeper2 = new Zookeeper("name2", "surname2");
+            zookeeper1.AddAnimalExperience(new Bison());
+            zookeeper2.AddAnimalExperience(new Snake());
+            zoo.HireEmployee(zookeeper1);
+            zoo.HireEmployee(zookeeper2);
+            zoo.FeedAnimals(DateTime.Now);
         }
     }
 }
