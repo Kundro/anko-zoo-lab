@@ -1,8 +1,9 @@
 ﻿using System;
-using ZooLab.Animals.Bird;
-using ZooLab.Animals.Mammal;
-using ZooLab.Animals.Reptile;
-using ZooLab.Employees;
+using ZooLab.Entities.Animals.Bird;
+using ZooLab.Entities.Animals.Mammal;
+using ZooLab.Entities.Animals.Reptile;
+using ZooLab.Entities.Employees;
+using ZooLab.Entities;
 
 namespace ZooLab.App
 {

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using ZooLab.Employees;
+using ZooLab.Entities.Employees;
+using ZooLab.Entities;
 
 namespace ZooLab.Validators
 {

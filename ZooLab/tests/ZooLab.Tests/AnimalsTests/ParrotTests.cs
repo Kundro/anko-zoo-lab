@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
-using System.Linq;
 using Xunit;
-using ZooLab.Animals.Bird;
-using ZooLab.Animals.Mammal;
-using ZooLab.Animals.Reptile;
+using System.Linq;
+using ZooLab.Entities.Animals.Bird;
+using ZooLab.Entities.Animals.Mammal;
+using ZooLab.Entities.Animals.Reptile;
 
 namespace ZooLab.Tests.AnimalsTests
 {

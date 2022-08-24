@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
 using Xunit;
-using ZooLab.Animals.Mammal;
-using ZooLab.Animals.Reptile;
-using ZooLab.Employees;
+using ZooLab.Entities.Animals.Mammal;
+using ZooLab.Entities.Animals.Reptile;
+using ZooLab.Entities.Employees;
+using ZooLab.Entities;
 using ZooLab.Exceptions;
 
 namespace ZooLab.Tests

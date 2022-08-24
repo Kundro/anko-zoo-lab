@@ -1,5 +1,5 @@
 ﻿using System;
-using ZooLab.Employees;
+using ZooLab.Entities.Employees;
 
 namespace ZooLab.Validators
 {

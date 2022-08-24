@@ -1,7 +1,8 @@
 ﻿using FluentAssertions;
 using Xunit;
-using ZooLab.Animals.Bird;
-using ZooLab.Employees;
+using ZooLab.Entities.Animals.Bird;
+using ZooLab.Entities.Employees;
+using ZooLab.Entities;
 using ZooLab.Validators;
 
 namespace ZooLab.Tests.ValidatorsTests

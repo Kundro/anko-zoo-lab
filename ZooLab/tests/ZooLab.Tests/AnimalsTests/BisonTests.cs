@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
 using Xunit;
-using ZooLab.Animals.Bird;
-using ZooLab.Animals.Mammal;
-using ZooLab.FoodTypes.Food;
+using ZooLab.Entities.Animals.Bird;
+using ZooLab.Entities.Animals.Mammal;
+using ZooLab.Entities.FoodTypes.Food;
 
 namespace ZooLab.Tests.AnimalsTests
 {

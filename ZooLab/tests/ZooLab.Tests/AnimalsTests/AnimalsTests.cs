@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Xunit;
-using ZooLab.Animals.Bird;
+using ZooLab.Entities.Animals.Bird;
 
 namespace ZooLab.Tests.AnimalsTests
 {

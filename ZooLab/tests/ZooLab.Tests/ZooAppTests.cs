@@ -1,6 +1,7 @@
 using FluentAssertions;
 using System;
 using Xunit;
+using ZooLab.Entities;
 
 namespace ZooLab.Tests
 {

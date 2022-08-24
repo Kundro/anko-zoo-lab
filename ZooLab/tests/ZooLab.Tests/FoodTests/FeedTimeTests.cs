@@ -2,10 +2,10 @@
 using System;
 using System.Linq;
 using Xunit;
-using ZooLab.Animals.Bird;
-using ZooLab.Employees;
-using ZooLab.FoodTypes;
-using ZooLab.FoodTypes.Food;
+using ZooLab.Entities.Animals.Bird;
+using ZooLab.Entities.Employees;
+using ZooLab.Entities.FoodTypes;
+using ZooLab.Entities.FoodTypes.Food;
 
 namespace ZooLab.Tests.FoodTests
 {

@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
-using ZooLab.Animals.Mammal;
-using ZooLab.Employees;
+using ZooLab.Entities.Animals.Mammal;
+using ZooLab.Entities.Employees;
 using ZooLab.Exceptions;
 
 namespace ZooLab.Tests.Employees
