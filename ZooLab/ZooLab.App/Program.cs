@@ -2,9 +2,6 @@
 {
     public class Program
     {
-        static void Main(string[] args)
-        {
-            RunApp.RunZoo();
-        }
+        static void Main(string[] args) => RunApp.RunZoo();
     }
 }
