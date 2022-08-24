@@ -15,7 +15,14 @@ namespace ZooLab.Animals
             ID = new Random().Next();
         }
 
-        public int ID { get; }
+        public Animal(bool isSick)
+        {
+            FeedTimes = new List<FeedTime>();
+            ID = new Random().Next();
+            IsSick = isSick;
+        }
+
+        public int ID { get; private set; }
         public bool IsSick { get; protected set; }
         public abstract int RequiredSpaceSqFt { get; }
         public abstract string[] FavoriteFood { get; }
@@ -30,7 +37,7 @@ namespace ZooLab.Animals
         {
             FeedSchedule.AddRange(hours);
         }
-        public void Heal(Medicine med)
+        public void Heal(Medicine medicine)
         {
             IsSick = false;
         }

@@ -1,4 +1,6 @@
-﻿using Xunit;
+﻿using FluentAssertions;
+using Xunit;
+using ZooLab.Animals.Mammal;
 using ZooLab.Animals.Reptile;
 
 namespace ZooLab.Tests.AnimalsTests
@@ -12,8 +14,30 @@ namespace ZooLab.Tests.AnimalsTests
             Assert.NotNull(snake);
             Assert.IsType<Snake>(snake);
             Assert.Equal(2, snake.RequiredSpaceSqFt);
+            snake.FavoriteFood[0].Should().Be("Meat");
         }
 
+        [Fact]
+        public void ShouldBeAbleToCreateSickSnake()
+        {
+            Snake snake = new Snake(true);
+            Assert.True(snake.IsSick);
+        }
 
+        [Fact]
+        public void ShouldBeAbleToCreateSnakeWithFriends()
+        {
+            Snake snake = new Snake();
+            Snake snake2 = new Snake();
+            Assert.True(snake.IsFriendlyWith(snake2));
+        }
+
+        [Fact]
+        public void ShouldNotBeAbleToCreateSnakeWithFriends()
+        {
+            Snake snake = new Snake();
+            Bison bison = new Bison();
+            Assert.False(snake.IsFriendlyWith(bison));
+        }
     }
 }

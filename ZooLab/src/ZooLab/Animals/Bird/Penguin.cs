@@ -4,6 +4,15 @@ namespace ZooLab.Animals.Bird
 {
     public class Penguin : Bird
     {
+        public Penguin() : base()
+        {
+
+        }
+
+        public Penguin(bool isSick) : base(isSick)
+        {
+
+        }
         public override int RequiredSpaceSqFt => 10;
 
         public override string[] FavoriteFood => new string[] { "Meat" };

@@ -4,6 +4,15 @@ namespace ZooLab.Animals.Mammal
 {
     public class Elephant : Mammal
     {
+        public Elephant() : base()
+        {
+
+        }
+
+        public Elephant(bool isSick) : base(isSick)
+        {
+
+        }
         public override int RequiredSpaceSqFt => 1000;
 
         public override string[] FavoriteFood => new string[] { "Vegetable", "Grass" };

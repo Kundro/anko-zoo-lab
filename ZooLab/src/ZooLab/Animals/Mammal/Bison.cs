@@ -13,7 +13,7 @@ namespace ZooLab.Animals.Mammal
         }
         public override int RequiredSpaceSqFt => 1000;
 
-        public override string[] FavoriteFood => new string[] { "Vegetable", "Grass" };
+        public override string[] FavoriteFood => new string[] { "Grass" };
         public static readonly string[] Friends = new string[]
         {
             "Elephant"
