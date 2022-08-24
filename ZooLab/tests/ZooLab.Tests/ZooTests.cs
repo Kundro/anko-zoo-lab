@@ -6,15 +6,23 @@ using ZooLab.Entities.Animals.Reptile;
 using ZooLab.Entities.Employees;
 using ZooLab.Entities;
 using ZooLab.Exceptions;
+using System.Xml.Linq;
 
 namespace ZooLab.Tests
 {
     public class ZooTests
     {
         [Fact]
+        public void ShouldBeAbleToCreateZoo()
+        {
+            var zoo = new Zoo();
+            Assert.Null(zoo.Location);
+        }
+
+        [Fact]
         public void ShouldBeAbleToAddEnclosure()
         {
-            Zoo zoo = new Zoo("Zoo1");
+            Zoo zoo = new Zoo();
 
             const string name = "Enclosure1";
             const int squareFeet = 10000;

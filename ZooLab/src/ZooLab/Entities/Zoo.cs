@@ -10,11 +10,19 @@ namespace ZooLab.Entities
 {
     public class Zoo
     {
+        private readonly IConsole NewConsole = new MockConsole();
+        public Zoo()
+        {
+            NewConsole.WriteLine("Zoo created without location.");
+            Enclosures = new List<Enclosure>();
+            Employees = new List<IEmployee>();
+        }
         public Zoo(string location)
         {
             Location = location;
             Enclosures = new List<Enclosure>();
             Employees = new List<IEmployee>();
+            NewConsole.WriteLine($"Zoo created in {location}");
         }
         public List<Enclosure> Enclosures { get; set; }
         public List<IEmployee> Employees { get; set; }
@@ -23,7 +31,7 @@ namespace ZooLab.Entities
         {
             Enclosure enclosure = new Enclosure(name, squareFeet, parentZoo);
             Enclosures.Add(enclosure);
-            Console.WriteLine($"\"{name}\" enclosure was added to Zoo at {parentZoo.Location}");
+            NewConsole.WriteLine($"\"{name}\" enclosure was added to Zoo at {parentZoo.Location}");
             return enclosure;
         }
         public Enclosure AddAnimal(Animal animal)
@@ -84,7 +92,7 @@ namespace ZooLab.Entities
             validator.ValidateEmployee(employee, this);
 
             // If there're exceptions - validation isn't right
-            Console.WriteLine($"Employee {employee.FirstName} {employee.LastName} hired to zoo ({Location})");
+            NewConsole.WriteLine($"Employee {employee.FirstName} {employee.LastName} hired to zoo ({Location})");
             Employees.Add(employee);
         }
         public void FeedAnimals(DateTime dateTime)
@@ -100,7 +108,7 @@ namespace ZooLab.Entities
                             Zookeeper zookeeper = (Zookeeper)employee;
                             if (zookeeper.HasAnimalExperience(animal))
                             {
-                                Console.Write($"At {dateTime}:");
+                                NewConsole.Write($"At {dateTime}:");
                                 zookeeper.FeedAnimal(animal);
                                 break;
                             }
@@ -122,7 +130,7 @@ namespace ZooLab.Entities
                             Veterinarian veterinarian = (Veterinarian)employee;
                             if ((employee as Veterinarian).HasAnimalExperience(animal))
                             {
-                                Console.Write($"In {enclosure.Name}:");
+                                NewConsole.Write($"In {enclosure.Name}:");
                                 Medicine medicine = new Antibiotics();
                                 veterinarian.HealAnimal(animal, medicine);
                                 break;

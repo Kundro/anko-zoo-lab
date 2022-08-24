@@ -7,6 +7,8 @@ namespace ZooLab.Entities.Employees
 {
     public class Veterinarian : IEmployee
     {
+        private readonly IConsole NewConsole = new MockConsole();
+
         public Veterinarian(string firstName, string lastName)
         {
             FirstName = firstName;
@@ -36,7 +38,7 @@ namespace ZooLab.Entities.Employees
             {
                 if (animal.IsSick)
                 {
-                    Console.WriteLine($"{animal} was healed by veterinarian {this.FirstName} {this.LastName} with {medicine}");
+                    NewConsole.WriteLine($"{animal} was healed by veterinarian {this.FirstName} {this.LastName} with {medicine}.ss");
                     animal.Heal(medicine);
                     return true;
                 }

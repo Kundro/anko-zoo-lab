@@ -35,7 +35,10 @@ namespace ZooLab.Tests
         {
             MockConsole mockConsole = new MockConsole();
             mockConsole.WriteLine("Test");
-            Logger.Log.Contains("Test");
+            Logger.Log.Contains("Test_1");
+
+            mockConsole.Write("Test_2");
+            Logger.Log.Contains("Test_2");
         }
     }
 }

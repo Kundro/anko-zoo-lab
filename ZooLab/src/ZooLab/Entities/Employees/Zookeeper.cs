@@ -7,6 +7,7 @@ namespace ZooLab.Entities.Employees
 {
     public class Zookeeper : IEmployee
     {
+        private readonly IConsole NewConsole = new MockConsole();
         public Zookeeper(string firstName, string lastName)
         {
             FirstName = firstName;
@@ -35,7 +36,7 @@ namespace ZooLab.Entities.Employees
             {
                 throw new NoNeededExperienceException();
             }
-            Console.WriteLine($" {animal.GetType().Name} was fed by");
+            NewConsole.WriteLine($" {animal.GetType().Name} was fed by");
             Food food = new Meat();
             animal.Feed(food, this);
             animal.FeedTimes.Add(new FoodTypes.FeedTime(DateTime.Now, this));

@@ -6,6 +6,7 @@ namespace ZooLab
 {
     public class ZooApp
     {
+        public IConsole NewConsole { get; set; } = new MockConsole();
         public ZooApp()
         {
             _zoos = new List<Zoo>();
@@ -14,7 +15,7 @@ namespace ZooLab
 
         public void AddZoo(Zoo zoo)
         {
-            Console.WriteLine($"Added new zoo in {zoo.Location}");
+            NewConsole.WriteLine("Added new zoo.");
             _zoos.Add(zoo);
         }
     }

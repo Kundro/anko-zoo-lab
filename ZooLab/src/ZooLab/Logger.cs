@@ -8,7 +8,7 @@ namespace ZooLab
         public static List<string> Log { get; set; } = new List<string>(); 
         public static void WriteLog(string message)
         {
-            Log.Add($"{DateTime.Now}: " + message);
+            Log.Add(message);
         }
     }
 }

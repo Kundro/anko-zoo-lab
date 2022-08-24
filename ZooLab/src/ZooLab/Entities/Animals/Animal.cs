@@ -10,6 +10,7 @@ namespace ZooLab.Entities.Animals
 {
     public abstract class Animal
     {
+        private readonly IConsole NewConsole = new MockConsole();
         public Animal()
         {
             FeedTimes = new List<FeedTime>();
@@ -24,7 +25,7 @@ namespace ZooLab.Entities.Animals
         }
 
         public int ID { get; private set; }
-        public bool IsSick { get; protected set; }
+        public bool IsSick { get; protected set; } = (new Random().Next(0, 8) > 4);
         public abstract int RequiredSpaceSqFt { get; }
         public abstract string[] FavoriteFood { get; }
         public List<FeedTime> FeedTimes { get; }
@@ -34,7 +35,7 @@ namespace ZooLab.Entities.Animals
         {
             FeedTimes.Add(new FeedTime(DateTime.Now, zooKeeper));
 
-            Console.Write($" {zooKeeper.FirstName} {zooKeeper.LastName}");
+            NewConsole.Write($" {zooKeeper.FirstName} {zooKeeper.LastName}.");
 
             if (!FavoriteFood.Contains(food.GetType().Name))
             {
