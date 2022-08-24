@@ -88,5 +88,22 @@ namespace ZooLab.Tests
             zoo.HireEmployee(zookeeper2);
             zoo.FeedAnimals(DateTime.Now);
         }
+
+        [Fact]
+        public void ShouldBeAbleToHealAnimals()
+        {
+            Zoo zoo = new Zoo("zoo1");
+            zoo.AddEnclosure("Snakes", 200, zoo);
+            Snake snake = new Snake();
+            zoo.FindAvailableEnclosure(snake);
+            zoo.AddAnimal(snake);
+            Veterinarian veterinarian1 = new Veterinarian("name1", "surname1");
+            Veterinarian veterinarian2 = new Veterinarian("name2", "surname2");
+            veterinarian1.AddAnimalExperience(new Bison());
+            veterinarian2.AddAnimalExperience(new Snake());
+            zoo.HireEmployee(veterinarian1);
+            zoo.HireEmployee(veterinarian2);
+            zoo.HealAnimals();
+        }
     }
 }
