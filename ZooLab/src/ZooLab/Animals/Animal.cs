@@ -28,7 +28,7 @@ namespace ZooLab.Animals
         public abstract int RequiredSpaceSqFt { get; }
         public abstract string[] FavoriteFood { get; }
         public List<FeedTime> FeedTimes { get; }
-        public List<int> FeedSchedule { get; }
+        public List<int> FeedSchedule { get; protected set; } = new List<int>();
         public abstract bool IsFriendlyWith(Animal animal);
         public void Feed(Food food, Zookeeper zooKeeper)
         {
