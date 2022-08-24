@@ -4,6 +4,13 @@ namespace ZooLab.Animals.Mammal
 {
     public class Bison : Mammal
     {
+        public Bison() : base()
+        {
+
+        }
+        public Bison(bool isSick) : base(isSick)
+        {
+        }
         public override int RequiredSpaceSqFt => 1000;
 
         public override string[] FavoriteFood => new string[] { "Vegetable", "Grass" };
@@ -11,6 +18,8 @@ namespace ZooLab.Animals.Mammal
         {
             "Elephant"
         };
+
+
         public override bool IsFriendlyWith(Animal animal)
         {
             return Friends.Contains(animal.GetType().Name);

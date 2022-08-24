@@ -1,4 +1,7 @@
-﻿using ZooLab.Animals;
+﻿using System;
+using ZooLab.Animals;
+using ZooLab.Exceptions;
+using ZooLab.MedicineTypes;
 
 namespace ZooLab.Employees
 {
@@ -27,9 +30,19 @@ namespace ZooLab.Employees
             if (AnimalExperiences.Contains(animal.GetType().Name)) return true;
             else return false;
         }
-        public bool HealAnimal(Animal animal)
+        public bool HealAnimal(Animal animal, Medicine medicine)
         {
-            return true;
+            if (HasAnimalExperience(animal))
+            {
+                if (animal.IsSick)
+                {
+                    Console.WriteLine($"{animal} was healed by veterinarian {this.FirstName} {this.LastName} with {medicine}");
+                    animal.Heal(medicine);
+                    return true;
+                }
+                else return false;
+            }
+            else throw new NoNeededExperienceException();
         }
     }
 }
