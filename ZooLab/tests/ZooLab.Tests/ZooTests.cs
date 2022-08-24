@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Linq;
 using Xunit;
 using ZooLab.Animals.Mammal;
 using ZooLab.Animals.Reptile;
 using ZooLab.Employees;
 using ZooLab.Exceptions;
+using ZooLab.FoodTypes;
 
 namespace ZooLab.Tests
 {
@@ -87,6 +89,7 @@ namespace ZooLab.Tests
             zoo.HireEmployee(zookeeper1);
             zoo.HireEmployee(zookeeper2);
             zoo.FeedAnimals(DateTime.Now);
+            Assert.Equal(zookeeper2, snake.FeedTimes.Last().FeedByZooKeeper);
         }
 
         [Fact]
@@ -94,7 +97,7 @@ namespace ZooLab.Tests
         {
             Zoo zoo = new Zoo("zoo1");
             zoo.AddEnclosure("Snakes", 200, zoo);
-            Snake snake = new Snake();
+            Snake snake = new Snake(true);
             zoo.FindAvailableEnclosure(snake);
             zoo.AddAnimal(snake);
             Veterinarian veterinarian1 = new Veterinarian("name1", "surname1");
@@ -103,7 +106,9 @@ namespace ZooLab.Tests
             veterinarian2.AddAnimalExperience(new Snake());
             zoo.HireEmployee(veterinarian1);
             zoo.HireEmployee(veterinarian2);
+            Assert.True(snake.IsSick);
             zoo.HealAnimals();
+            Assert.False(snake.IsSick);
         }
     }
 }

@@ -98,7 +98,7 @@ namespace ZooLab
                         if (employee is Zookeeper)
                         {
                             Zookeeper zookeeper = (Zookeeper)employee;
-                            if ((employee as Zookeeper).HasAnimalExperience(animal))
+                            if (zookeeper.HasAnimalExperience(animal))
                             {
                                 Console.Write($"In {enclosure.Name} at {dateTime}:");
                                 zookeeper.FeedAnimal(animal);

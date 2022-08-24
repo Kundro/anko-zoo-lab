@@ -1,6 +1,7 @@
 ﻿using System;
 using ZooLab.Animals;
 using ZooLab.Exceptions;
+using ZooLab.FoodTypes.Food;
 
 namespace ZooLab.Employees
 {
@@ -30,12 +31,14 @@ namespace ZooLab.Employees
         }
         public bool FeedAnimal(Animal animal)
         {
-            if (!this.HasAnimalExperience(animal))
+            if (!HasAnimalExperience(animal))
             {
                 throw new NoNeededExperienceException();
             }
-            Console.Write($"... {animal.GetType().Name} was fed by {this.FirstName} {this.LastName}");
-
+            Console.Write($"... {animal.GetType().Name} was fed by {FirstName} {LastName}");
+            Food food = new Meat();
+            animal.Feed(food, this);
+            animal.FeedTimes.Add(new FoodTypes.FeedTime(DateTime.Now, this));
             return true;
         }
     }
