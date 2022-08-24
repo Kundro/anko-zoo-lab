@@ -28,5 +28,13 @@ namespace ZooLab.Tests
             zooApp.AddZoo(zoo);
             zooApp.Should().NotBe(null);
         }
+
+        [Fact]
+        public void ShouldBeAbleToCreateLog()
+        {
+            MockConsole mockConsole = new MockConsole();
+            mockConsole.WriteLine("Test");
+            Logger.Log.Contains("Test");
+        }
     }
 }
