@@ -35,7 +35,7 @@ namespace ZooLab.Employees
             {
                 throw new NoNeededExperienceException();
             }
-            Console.Write($"... {animal.GetType().Name} was fed by {FirstName} {LastName}");
+            Console.WriteLine($" {animal.GetType().Name} was fed by");
             Food food = new Meat();
             animal.Feed(food, this);
             animal.FeedTimes.Add(new FoodTypes.FeedTime(DateTime.Now, this));

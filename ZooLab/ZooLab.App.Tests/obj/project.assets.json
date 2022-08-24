@@ -6291,11 +6291,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\Zoo.Lab.Tests\\Zoo.Lab.Tests.csproj",
-      "projectName": "Zoo.Lab.Tests",
-      "projectPath": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\Zoo.Lab.Tests\\Zoo.Lab.Tests.csproj",
+      "projectUniqueName": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\ZooLab.App.Tests\\ZooLab.App.Tests.csproj",
+      "projectName": "ZooLab.App.Tests",
+      "projectPath": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\ZooLab.App.Tests\\ZooLab.App.Tests.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\Zoo.Lab.Tests\\obj\\",
+      "outputPath": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\ZooLab.App.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",

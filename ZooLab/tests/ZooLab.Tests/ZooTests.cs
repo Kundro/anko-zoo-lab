@@ -5,7 +5,6 @@ using ZooLab.Animals.Mammal;
 using ZooLab.Animals.Reptile;
 using ZooLab.Employees;
 using ZooLab.Exceptions;
-using ZooLab.FoodTypes;
 
 namespace ZooLab.Tests
 {

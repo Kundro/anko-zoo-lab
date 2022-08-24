@@ -7,7 +7,7 @@ namespace ZooLab.App.Tests
             [Fact]
             public void ShouldBeAbleToRunZooApp()
             {
-                
+            ZooLab.App.RunApp.RunZoo();
             }
     }
 }

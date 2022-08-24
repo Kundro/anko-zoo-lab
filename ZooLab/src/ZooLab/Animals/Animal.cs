@@ -34,12 +34,12 @@ namespace ZooLab.Animals
         {
             FeedTimes.Add(new FeedTime(DateTime.Now, zooKeeper));
 
+            Console.Write($" {zooKeeper.FirstName} {zooKeeper.LastName}");
+
             if (!FavoriteFood.Contains(food.GetType().Name))
             {
                 IsSick = true;
             }
-
-            Console.WriteLine($"{DateTime.Now}: {this.GetType().Name} was fed by {zooKeeper.FirstName} {zooKeeper.LastName}");
         }
         public void AddFeedSchedule(List<int> hours)
         {

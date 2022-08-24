@@ -100,7 +100,7 @@ namespace ZooLab
                             Zookeeper zookeeper = (Zookeeper)employee;
                             if (zookeeper.HasAnimalExperience(animal))
                             {
-                                Console.Write($"In {enclosure.Name} at {dateTime}:");
+                                Console.Write($"At {dateTime}:");
                                 zookeeper.FeedAnimal(animal);
                                 break;
                             }

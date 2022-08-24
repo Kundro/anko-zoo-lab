@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jmPCrkPKoyoiee1iQPfWSa+SxJLvm3rkVjv3biLbEDpaAOEA91DZpF0hdGJj9ra8BTL692jkJeTTFf2jjO0zNQ==",
+  "dgSpecHash": "FSsPWGWNqWFLRl0aboUy7s9BdhkTWDGBEAas8+HrZItZEdJUYkRHV895KmFKqEDafzFn8k3Wn9O05aOYDOtZmg==",
   "success": true,
-  "projectFilePath": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\Zoo.Lab.Tests\\Zoo.Lab.Tests.csproj",
+  "projectFilePath": "D:\\ANKO\\anko-zoo-lab\\ZooLab\\ZooLab.App.Tests\\ZooLab.App.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\fluentassertions\\6.7.0\\fluentassertions.6.7.0.nupkg.sha512",
