@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ZooLab.Employees;
 using ZooLab.FoodTypes;
 using ZooLab.FoodTypes.Food;
@@ -31,7 +32,14 @@ namespace ZooLab.Animals
         public abstract bool IsFriendlyWith(Animal animal);
         public void Feed(Food food, Zookeeper zooKeeper)
         {
-            // nothing
+            FeedTimes.Add(new FeedTime(DateTime.Now, zooKeeper));
+
+            if (!FavoriteFood.Contains(food.GetType().Name))
+            {
+                IsSick = true;
+            }
+
+            Console.WriteLine($"{DateTime.Now}: {this.GetType().Name} was fed by {zooKeeper.FirstName} {zooKeeper.LastName}");
         }
         public void AddFeedSchedule(List<int> hours)
         {

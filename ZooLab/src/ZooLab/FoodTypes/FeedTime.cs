@@ -5,14 +5,13 @@ namespace ZooLab.FoodTypes
 {
     public class FeedTime
     {
-        public DateTime GetFeedTime()
+        public FeedTime(DateTime time, Zookeeper feedByZooKeeper)
         {
-            return DateTime.Now;
+            Time = time;
+            FeedByZooKeeper = feedByZooKeeper;
         }
-        public Zookeeper FeedByZooKeeper()
-        {
-            Zookeeper zookeeper = new Zookeeper("Alexey", "Kundro");
-            return zookeeper;
-        }
+
+        public DateTime Time { get; set; }
+        public Zookeeper FeedByZooKeeper { get; set; }
     }
 }
