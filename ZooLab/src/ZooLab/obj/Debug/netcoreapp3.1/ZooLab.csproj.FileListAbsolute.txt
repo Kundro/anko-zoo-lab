@@ -1,0 +1,10 @@
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\bin\Debug\netcoreapp3.1\ZooLab.deps.json
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\bin\Debug\netcoreapp3.1\ZooLab.dll
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\bin\Debug\netcoreapp3.1\ZooLab.pdb
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\obj\Debug\netcoreapp3.1\ZooLab.csproj.AssemblyReference.cache
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\obj\Debug\netcoreapp3.1\ZooLab.GeneratedMSBuildEditorConfig.editorconfig
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\obj\Debug\netcoreapp3.1\ZooLab.AssemblyInfoInputs.cache
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\obj\Debug\netcoreapp3.1\ZooLab.AssemblyInfo.cs
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\obj\Debug\netcoreapp3.1\ZooLab.csproj.CoreCompileInputs.cache
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\obj\Debug\netcoreapp3.1\ZooLab.dll
+D:\ANKO\anko-zoo-lab\ZooLab\src\ZooLab\obj\Debug\netcoreapp3.1\ZooLab.pdb
