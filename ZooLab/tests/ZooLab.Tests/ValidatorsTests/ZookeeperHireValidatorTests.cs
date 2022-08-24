@@ -1,10 +1,7 @@
 ﻿using FluentAssertions;
 using Xunit;
-using ZooLab.Animals;
 using ZooLab.Animals.Bird;
-using ZooLab.Animals.Mammal;
 using ZooLab.Employees;
-using ZooLab.Exceptions;
 using ZooLab.Validators;
 
 namespace ZooLab.Tests.ValidatorsTests
@@ -14,7 +11,7 @@ namespace ZooLab.Tests.ValidatorsTests
         [Fact]
         public void ShouldBeAbleToCreateValidator()
         {
-            ZookeeperHireValidatorTests validator = new ZookeeperHireValidatorTests();
+            ZookeeperHireValidator validator = new ZookeeperHireValidator();
             validator.Should().NotBeNull();
         }
 
@@ -40,7 +37,7 @@ namespace ZooLab.Tests.ValidatorsTests
             Parrot parrot = new Parrot();
             zoo.AddAnimal(parrot);
             Zookeeper employee = new Zookeeper("name", "surname");
-            Assert.Equal($"Zookeeper {employee.FirstName} {employee.LastName} must have experience to work with {parrot.GetType().Name}", validator.ValidateEmployee(employee, zoo)[0].ErrorMessage);
+            Assert.Equal($"Zookeeper {employee.FirstName} {employee.LastName} must have an experience to work with {parrot.GetType().Name}", validator.ValidateEmployee(employee, zoo)[0].ErrorMessage);
         }
 
         [Fact]
@@ -52,7 +49,7 @@ namespace ZooLab.Tests.ValidatorsTests
             Parrot parrot = new Parrot();
             zoo.AddAnimal(parrot);
             Veterinarian employee = new Veterinarian("name", "surname");
-            Assert.Equal($"Emplooye {employee.FirstName} {employee.LastName} must be a zookeeper to take ZookeeperHireValidation", validator.ValidateEmployee(employee, zoo)[0].ErrorMessage);
+            Assert.Equal($"Emplooye {employee.FirstName} {employee.LastName} must be a zookeeper to take ZookeeperHireValidator", validator.ValidateEmployee(employee, zoo)[0].ErrorMessage);
         }
 
         [Fact]

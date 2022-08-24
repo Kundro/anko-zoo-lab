@@ -10,7 +10,7 @@ namespace ZooLab.Validators
             var errors = new List<ValidationError>();
             if (!(employee is Zookeeper))
             {
-                errors.Add(new ValidationError { ErrorMessage = $"Emplooye {employee.FirstName} {employee.LastName} must be a zookeeper to take ZookeeperHireValidation" });
+                errors.Add(new ValidationError { ErrorMessage = $"Emplooye {employee.FirstName} {employee.LastName} must be a zookeeper to take ZookeeperHireValidator" });
                 return errors;
             }
 
@@ -21,7 +21,7 @@ namespace ZooLab.Validators
             {
                 if (!(employee as Zookeeper).AnimalExperiences.Contains(animal))
                 {
-                    errors.Add(new ValidationError { ErrorMessage = $"Zookeeper {employee.FirstName} {employee.LastName} must have experience to work with {animal}" });
+                    errors.Add(new ValidationError { ErrorMessage = $"Zookeeper {employee.FirstName} {employee.LastName} must have an experience to work with {animal}" });
                 }
             }
             return errors;

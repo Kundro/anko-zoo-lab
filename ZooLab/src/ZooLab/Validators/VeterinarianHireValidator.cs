@@ -21,7 +21,7 @@ namespace ZooLab.Validators
             {
                 if (!(employee as Veterinarian).AnimalExperiences.Contains(animal))
                 {
-                    errors.Add(new ValidationError { ErrorMessage = $"Veterinarian {employee.FirstName} {employee.LastName} must have experience to work with {animal}" });
+                    errors.Add(new ValidationError { ErrorMessage = $"Veterinarian {employee.FirstName} {employee.LastName} must have an experience to work with {animal}" });
                 }
             }
             return errors;

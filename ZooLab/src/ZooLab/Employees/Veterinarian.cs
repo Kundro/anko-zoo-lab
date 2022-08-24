@@ -8,6 +8,7 @@ namespace ZooLab.Employees
         {
             FirstName = firstName;
             LastName = lastName;
+            AnimalExperiences = "";
         }
 
         public string FirstName { get; }
